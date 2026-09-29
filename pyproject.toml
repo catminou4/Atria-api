@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "atria-keys"
+version = "0.1.0"
+description = "Local, resumable service-account provisioning harness for Atria"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "playwright>=1.47,<2",
+  "PyYAML>=6,<7",
+]
+
+[project.scripts]
+atria-keys = "atria_keys.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["atria_keys"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+

@@ -1,0 +1,28 @@
+mailbox:
+  kind: imap_catchall
+  host: imap.example.com
+  port: 993
+  username: atria@example.com
+  password_env: ATRIA_MAILBOX_PASSWORD
+  use_ssl: true
+  recipient_domain: services.example.com
+  poll_seconds: 5
+  timeout_seconds: 300
+
+pacing:
+  min_interval_seconds: 600
+  max_interval_seconds: 1200
+  max_runs_per_day: 50
+  challenge_failure_threshold: 3
+  challenge_backoff_seconds: 1800
+
+dashboard_port: 8686
+keystore_path: keys/keys.jsonl
+state_path: keys/state.sqlite3
+session_dir: keys/sessions
+artifact_dir: keys/artifacts
+pending_dir: keys/.pending
+headed: true
+challenge_timeout_seconds: 300
+# Replace this with the provider-issued partnership registration URL if it differs.
+registration_url: https://api.atria-asi.ai/console
